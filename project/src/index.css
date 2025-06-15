@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-secondary-600 text-white hover:bg-secondary-700 focus:ring-secondary-500;
+  }
+  
+  .btn-accent {
+    @apply btn bg-accent-500 text-white hover:bg-accent-600 focus:ring-accent-400;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-card p-6 transition-all duration-300 hover:shadow-lg;
+  }
+  
+  .skill-node {
+    @apply w-16 h-16 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300;
+  }
+  
+  .skill-node-locked {
+    @apply bg-gray-300 text-gray-500;
+  }
+  
+  .skill-node-unlocked {
+    @apply bg-primary-500 text-white shadow-skill hover:bg-primary-600;
+  }
+  
+  .skill-node-completed {
+    @apply bg-success-500 text-white;
+  }
+  
+  .skill-connection {
+    @apply h-1 bg-gray-300;
+  }
+  
+  .skill-connection-active {
+    @apply bg-primary-500;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-400;
+}
+
+/* Progress Bar Animation */
+@keyframes fill-progress {
+  from { width: 0; }
+  to { width: var(--progress-width, 0%); }
+}
+
+.progress-fill {
+  animation: fill-progress 1s ease-out forwards;
+}
